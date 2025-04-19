@@ -1,0 +1,24 @@
+{
+    "name": "employee-management-backend",
+    "version": "1.0.0",
+    "description": "Backend for Employee Management System",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "dependencies": {
+        "bcryptjs": "^3.0.2",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^5.1.0",
+        "express-validator": "^7.2.1",
+        "helmet": "^8.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.13.2",
+        "morgan": "^1.10.0",
+        "validator": "^13.7.0",
+        "winston": "^3.8.2"
+    }
+}
