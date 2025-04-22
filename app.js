@@ -16,7 +16,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: process.env.FONTEND_URL || 'https://employee-mngmnt.netlify.app', // or your frontend URL
+    origin: process.env.FONTEND_URL || 'http://localhost:3000', // or your frontend URL
     credentials: true
 }));
 app.use(express.json());
