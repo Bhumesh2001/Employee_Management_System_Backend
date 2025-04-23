@@ -53,10 +53,18 @@ exports.getProfile = async (req, res, next) => {
 exports.logout = (req, res) => {
     const role = req.body.role;
 
+    // Common cookie options based on environment
+    const cookieOptions = {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None",
+    };
+
+    // Clear role-specific token
     if (role === 'admin') {
-        res.clearCookie('admin_token');
+        res.clearCookie('admin_token', cookieOptions);
     } else if (role === 'employee') {
-        res.clearCookie('employee_token');
+        res.clearCookie('employee_token', cookieOptions);
     }
 
     return successResponse(res, 'Logged out successfully!');
