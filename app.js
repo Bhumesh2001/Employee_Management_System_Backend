@@ -23,9 +23,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-// welcome message
-app.use('/', (req, res) => res.send('<h1>Hello from Backend Server</h1>'));
-
 // Routes
 app.use('/api/auth', require('./routes/adminRoutes'));
 app.use('/api/employee', require('./routes/employeeRoutes'));
