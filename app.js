@@ -16,12 +16,15 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: process.env.FONTEND_URL,
+    origin: [process.env.FONTEND_URL, "http://localhost:5173"],
     credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
+
+// welcome message
+app.use('/', (req, res) => res.send('<h1>Hello from Backend Server</h1>'));
 
 // Routes
 app.use('/api/auth', require('./routes/adminRoutes'));
